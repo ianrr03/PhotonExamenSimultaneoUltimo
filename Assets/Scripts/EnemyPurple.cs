@@ -19,10 +19,10 @@ public class EnemyPurple : MonoBehaviour
     void Update()
     {
         #region patrullaje por puntos aleatorios
-        if (Vector3.Distance(transform.position, destino) < 5.5f)
+        if (Vector3.Distance(transform.position, destino) < 2.5f)
         {
             indiceHijos = Random.Range(0, rutaPadre.childCount);
-            indiceHijos++;
+           // indiceHijos++;
             if (indiceHijos >= rutaPadre.childCount)
                 indiceHijos = 0; //Comenzamos otra vez en el punto primero
             destino = rutaPadre.GetChild(indiceHijos).position;
