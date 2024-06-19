@@ -1,15 +1,30 @@
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    //[SerializeField] Text myName;
+    //[SerializeField] Text theirName;
+    //internal static object instance;
+
     void Start()
     {
         InstatiatePlayers();
+        //myName.text = PhotonNetwork.NickName;
     }
+    //public void SetTheirName(string nameIn)
+    //{
+    //    //theirName.text = nameIn;
+    //}
+
+
+
 
     // Update is called once per frame
     void Update()
@@ -31,4 +46,5 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+
 }

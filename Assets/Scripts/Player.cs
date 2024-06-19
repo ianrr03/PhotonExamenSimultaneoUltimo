@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         _photonView = GetComponent<PhotonView>();
+
+        //_photonView.RPC("RPC_SendName", RpcTarget.OthersBuffered, PhotonNetwork.NickName);
     }
 
     // Update is called once per frame
@@ -31,4 +33,10 @@ public class Player : MonoBehaviour
             _rigidbody.AddForce(movimiento);
         }
     }
+
+    //[PunRPC]
+    //void RPC_SendName(string nameSent)
+    //{
+    //   GameManager.instance.SetTheirName(nameSent);
+    //}
 }

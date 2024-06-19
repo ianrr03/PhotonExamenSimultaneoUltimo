@@ -31,7 +31,8 @@ public class Launcher : MonoBehaviourPunCallbacks {
     PhotonNetwork.ConnectUsingSettings();
   }
 
-  public override void OnConnectedToMaster() {
+  public override void OnConnectedToMaster() 
+  {
     Debug.Log("¡Conectado al máster!");
     PhotonNetwork.JoinLobby();
     
@@ -61,7 +62,8 @@ public class Launcher : MonoBehaviourPunCallbacks {
     }
   }
 
-  public void CreateRoom() {
+  public void CreateRoom() //Crea la sala
+  {
     if (!string.IsNullOrEmpty(roomNameInputField.text)) {
       PhotonNetwork.CreateRoom(roomNameInputField.text);
       MenuManager.Instance.OpenMenu("loading");
@@ -72,7 +74,8 @@ public class Launcher : MonoBehaviourPunCallbacks {
     }
   }
 
-  public override void OnJoinedRoom() {
+  public override void OnJoinedRoom() //Una vez nosotros nos hemos conectado a la sala
+  {
     
     MenuManager.Instance.OpenMenu("room");
     roomNameText.text = PhotonNetwork.CurrentRoom.Name;
@@ -140,8 +143,14 @@ public class Launcher : MonoBehaviourPunCallbacks {
     Application.Quit();
   }
 
-    public void ShowUserName() //para mostrar el usuario del player
-    {
-        showUserNamePlayer.text = PhotonNetwork.NickName;
-    }
+    //public void ShowUserName() //para mostrar el usuario del player Miguel Angel
+    //{
+    //    showUserNamePlayer.text = PhotonNetwork.NickName;
+    //}
+
+    //public void ShowUserNameInput(string username)
+    //{
+    //    PhotonNetwork.NickName = username;
+    //}
+
 }

@@ -33,4 +33,5 @@ public class MenuManager : MonoBehaviour {
   public void CloseMenu(Menu menu) {
     menu.Close();
   }
+
 }
